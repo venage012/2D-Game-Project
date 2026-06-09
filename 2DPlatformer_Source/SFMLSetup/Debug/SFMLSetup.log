@@ -1,0 +1,11 @@
+﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(548,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFMLSetup.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Level.cpp
+C:\Users\MDS3001200\Documents\GitHub\2D-Platformer-2026\2DPlatformer_Source\SFMLSetup\Collisions.h(4,14): warning C4091: 'static ': ignored on left of 'Collisions' when no variable is declared
+  (compiling source file 'Level.cpp')
+  
+C:\Users\MDS3001200\Documents\GitHub\2D-Platformer-2026\2DPlatformer_Source\SFMLSetup\Level.cpp(37,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MDS3001200\Documents\GitHub\2D-Platformer-2026\2DPlatformer_Source\SFMLSetup\Level.cpp(191,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MDS3001200\Documents\GitHub\2D-Platformer-2026\2DPlatformer_Source\SFMLSetup\Level.cpp(199,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MDS3001200\Documents\GitHub\2D-Platformer-2026\2DPlatformer_Source\SFMLSetup\Level.cpp(206,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MDS3001200\Documents\GitHub\2D-Platformer-2026\2DPlatformer_Source\SFMLSetup\Level.cpp(214,20): warning C4018: '<': signed/unsigned mismatch
+  SFMLSetup.vcxproj -> C:\Users\MDS3001200\Documents\GitHub\2D-Platformer-2026\2DPlatformer_Source\Debug\2D Platformer.exe
