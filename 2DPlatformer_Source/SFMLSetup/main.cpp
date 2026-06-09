@@ -82,6 +82,8 @@ int main()
                     {
                         NewLevel.LoadLevel("Levels/Level3.txt");
                         CurrLevel = Level_3;
+                        Enemy = new Character(CType_Enemy);
+                        Enemy = NewLevel.m_EnemySpawn;
                         EnemySpawn = true;
                         EnemyPresent = true;
                     }
@@ -96,6 +98,8 @@ int main()
                     {
                         NewLevel.LoadLevel("Levels/Level5.txt");
                         CurrLevel = Level_5;
+                        Enemy = new Character(CType_Enemy);
+                        Enemy = NewLevel.m_EnemySpawn;
                         EnemySpawn = true;
                         EnemyPresent = true;
                     }
@@ -103,6 +107,8 @@ int main()
                     {
                         NewLevel.LoadLevel("Levels/LevelTest.txt");
                         CurrLevel = Level_Test;
+                        Enemy = new Character(CType_Enemy);
+                        Enemy = NewLevel.m_EnemySpawn;
                         EnemySpawn = true;
                         EnemyPresent = true;
                     }
@@ -176,8 +182,11 @@ int main()
                 EnemySpawn = false;
                 break;
             case Level_2:
+
                 NewLevel.LoadLevel("Levels/Level3.txt");
                 CurrLevel = Level_3;
+                Enemy = new Character(CType_Enemy);
+                Enemy = NewLevel.m_EnemySpawn;
                 LoadNow = false;
                 EnemyPresent = true;
                 EnemySpawn = true;
@@ -193,6 +202,8 @@ int main()
             case Level_4:
                 NewLevel.LoadLevel("Levels/Level5.txt");
                 CurrLevel = Level_5;
+                Enemy = new Character(CType_Enemy);
+                Enemy = NewLevel.m_EnemySpawn;
                 LoadNow = false;
                 EnemyPresent = true;
                 EnemySpawn = true;
@@ -208,6 +219,8 @@ int main()
             case Level_Test:
                 NewLevel.LoadLevel("Levels/LevelTest.txt");
                 CurrLevel = Level_Test;
+                Enemy = new Character(CType_Enemy);
+                Enemy = NewLevel.m_EnemySpawn;
                 EnemyPresent = true;
                 EnemySpawn = true;
                 KeyGet = false;

@@ -49,10 +49,8 @@ void Level::LoadLevel(std::string _filePath)
 
 void Level::SetupLevel()
 {
-	if (m_EnemySpawn == nullptr)
-	{
-		m_EnemySpawn = new Character(CType_Enemy);
-	}
+	
+	m_EnemySpawn = new Character(CType_Enemy);
 
 	for (int y = 0; y < m_LevelHeight; y++)
 	{
@@ -190,7 +188,7 @@ void Level::UnloadLevel()
 {
 	for (int l = 0; l < m_LevelTiles.size(); l++)
 	{
-		if(m_LevelTiles[l] != nullptr)
+		if(m_LevelTiles[l])
 		{
 			delete m_LevelTiles[l];
 		}
@@ -198,14 +196,15 @@ void Level::UnloadLevel()
 
 	for (int w = 0; w < m_LevelWallTiles.size(); w++)
 	{
-		if (m_LevelWallTiles[w] != nullptr)
+		if (m_LevelWallTiles[w])
 		{
 			delete m_LevelWallTiles[w];
 		}
 	}
+	/*
 	for (int i = 0; i < m_InteractableTiles.size(); i++)
 	{
-		if ((int)m_InteractableTiles[i]->m_TileType >= 0)
+		if (m_InteractableTiles[i])
 		{
 			delete m_InteractableTiles[i];
 		}
@@ -213,12 +212,12 @@ void Level::UnloadLevel()
 
 	for (int c = 0; c < m_LevelWallColliders.size(); c++)
 	{
-		if ((int)m_LevelWallColliders[c]->m_TileType >= 0)
+		if (m_LevelWallColliders[c])
 		{
 			delete m_LevelWallColliders[c];
 		}
 	}
-
+	*/
 	m_LevelTiles.clear();
 	m_LevelWallTiles.clear();
 	m_InteractableTiles.clear();
