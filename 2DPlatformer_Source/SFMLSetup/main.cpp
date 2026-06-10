@@ -6,7 +6,7 @@ int main()
     window.setFramerateLimit(60);
 
     Character* Player = new Character(CType_Player);
-    Character* Enemy = new Character(CType_Enemy);
+    //Character* Enemy = new Character(CType_Enemy);
     CHelper g_Helper;
 
     Level NewLevel(100,100);
@@ -16,8 +16,11 @@ int main()
 
     Player = NewLevel.m_PlaySpawn;
     Player->GetCharShape()->setOutlineColor(sf::Color::Blue);
-    Enemy = NewLevel.m_EnemySpawn;
-    Enemy->GetCharShape()->setOutlineColor(sf::Color::Red);
+    //Enemy = NewLevel.m_EnemySpawn;
+    //Enemy->GetCharShape()->setOutlineColor(sf::Color::Red);
+
+    //Mouse variables
+    sf::Vector2f MouseLocation;
 
     //Debug bools
     bool DebugMode = false;
@@ -31,14 +34,6 @@ int main()
 
     while (window.isOpen())
     {
-        if (EnemySpawn)
-        {
-            Enemy = new Character(CType_Enemy);
-            Enemy = NewLevel.m_EnemySpawn;
-            Enemy->GetCharShape()->setOutlineColor(sf::Color::Red);
-            EnemySpawn = false;
-        }
-
         while (const std::optional event = window.pollEvent())
         {
             if (event->is<sf::Event::Closed>())
@@ -82,10 +77,9 @@ int main()
                     {
                         NewLevel.LoadLevel("Levels/Level3.txt");
                         CurrLevel = Level_3;
-                        Enemy = new Character(CType_Enemy);
-                        Enemy = NewLevel.m_EnemySpawn;
                         EnemySpawn = true;
                         EnemyPresent = true;
+                        KeyGet = false;
                     }
                     if (keyPressed->scancode == sf::Keyboard::Scancode::Num4)
                     {
@@ -98,19 +92,17 @@ int main()
                     {
                         NewLevel.LoadLevel("Levels/Level5.txt");
                         CurrLevel = Level_5;
-                        Enemy = new Character(CType_Enemy);
-                        Enemy = NewLevel.m_EnemySpawn;
                         EnemySpawn = true;
                         EnemyPresent = true;
+                        KeyGet = false;
                     }
                     if (keyPressed->scancode == sf::Keyboard::Scancode::T)
                     {
                         NewLevel.LoadLevel("Levels/LevelTest.txt");
                         CurrLevel = Level_Test;
-                        Enemy = new Character(CType_Enemy);
-                        Enemy = NewLevel.m_EnemySpawn;
                         EnemySpawn = true;
                         EnemyPresent = true;
+                        KeyGet = false;
                     }
 
                     //Toggle invincibility bool
@@ -146,27 +138,18 @@ int main()
         if (DebugHitbox)
         {
             Player->GetCharShape()->setOutlineThickness(-1);
-            if (EnemyPresent)
-            {
-                Enemy->GetCharShape()->setOutlineThickness(-1);
-            }
         }
         else
         {
             Player->GetCharShape()->setOutlineThickness(0);
-            if (EnemyPresent)
-            {
-                Enemy->GetCharShape()->setOutlineThickness(0);
-            }
         }
+
+        //Mouse code
+        MouseLocation = sf::Vector2f(sf::Mouse::getPosition(window));
 
         g_Helper.HelperTick();
 
-        Player->CharacterInputUpdate(g_Helper.m_DeltaTime, NewLevel.m_LevelWallColliders, KeyGet);
-        if(EnemyPresent)
-        {
-            Enemy->CharacterInputUpdate(g_Helper.m_DeltaTime, NewLevel.m_LevelWallColliders,false);
-        }
+        Player->CharacterInputUpdate(g_Helper.m_DeltaTime, NewLevel.m_LevelWallColliders, MouseLocation);
 
         window.clear();
 
@@ -185,8 +168,6 @@ int main()
 
                 NewLevel.LoadLevel("Levels/Level3.txt");
                 CurrLevel = Level_3;
-                Enemy = new Character(CType_Enemy);
-                Enemy = NewLevel.m_EnemySpawn;
                 LoadNow = false;
                 EnemyPresent = true;
                 EnemySpawn = true;
@@ -202,8 +183,6 @@ int main()
             case Level_4:
                 NewLevel.LoadLevel("Levels/Level5.txt");
                 CurrLevel = Level_5;
-                Enemy = new Character(CType_Enemy);
-                Enemy = NewLevel.m_EnemySpawn;
                 LoadNow = false;
                 EnemyPresent = true;
                 EnemySpawn = true;
@@ -219,8 +198,6 @@ int main()
             case Level_Test:
                 NewLevel.LoadLevel("Levels/LevelTest.txt");
                 CurrLevel = Level_Test;
-                Enemy = new Character(CType_Enemy);
-                Enemy = NewLevel.m_EnemySpawn;
                 EnemyPresent = true;
                 EnemySpawn = true;
                 KeyGet = false;
@@ -240,52 +217,6 @@ int main()
             }
         }
 
-        if (EnemyPresent)
-        {
-            if (Player->GetCharShape()->getGlobalBounds().findIntersection(Enemy->GetCharShape()->getGlobalBounds()))
-            {
-                float Intersect = Player->GetCharShape()->getPosition().y - Enemy->GetCharShape()->getPosition().y;
-                if (Intersect <= -9.0 && Intersect >= -14.9 && !DebugInvincible)
-                {
-                    switch (CurrLevel)
-                    {
-                    case Level_1:
-                        NewLevel.LoadLevel("Levels/Level1.txt");
-                        break;
-                    case Level_2:
-                        NewLevel.LoadLevel("Levels/Level2.txt");
-                        break;
-                    case Level_3:
-                        NewLevel.LoadLevel("Levels/Level3.txt");
-                        EnemyPresent = true;
-                        break;
-                    case Level_4:
-                        NewLevel.LoadLevel("Levels/Level4.txt");
-                        EnemyPresent = false;
-                        break;
-                    case Level_5:
-                        NewLevel.LoadLevel("Levels/Level5.txt");
-                        EnemyPresent = true;
-                        break;
-                    case Level_Test:
-                        NewLevel.LoadLevel("Levels/LevelTest.txt");
-                        EnemyPresent = true;
-                        KeyGet = false;
-                        break;
-                    default:
-                        break;
-                    }
-                }
-                else if (Intersect <= -15.0)
-                {
-                    EnemyPresent = false;
-                    KeyGet = true;
-                    delete Enemy;
-                }
-            }
-        }
-
-
         for (int i = 0; i < NewLevel.m_LevelTiles.size(); i++)
         {
             window.draw(NewLevel.m_LevelTiles[i]->m_TileShape);
@@ -297,10 +228,6 @@ int main()
         }
 
         window.draw(*Player->GetCharShape());
-        if (EnemyPresent)
-        {
-            window.draw(*Enemy->GetCharShape());
-        }
         window.display();
     }
 }

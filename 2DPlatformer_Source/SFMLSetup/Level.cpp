@@ -10,7 +10,6 @@ Level::Level(int _levelWidth, int _levelHeight)
 		}
 	}
 	m_PlaySpawn = new Character(CType_Player);
-	m_EnemySpawn = new Character(CType_Enemy);
 }
 
 Level::~Level()
@@ -50,8 +49,6 @@ void Level::LoadLevel(std::string _filePath)
 void Level::SetupLevel()
 {
 	
-	m_EnemySpawn = new Character(CType_Enemy);
-
 	for (int y = 0; y < m_LevelHeight; y++)
 	{
 		for (int x = 0; x < m_LevelWidth; x++)
@@ -186,6 +183,7 @@ void Level::SetupLevel()
 
 void Level::UnloadLevel()
 {
+	//Loops to delete the level tiles
 	for (int l = 0; l < m_LevelTiles.size(); l++)
 	{
 		if(m_LevelTiles[l])
@@ -201,28 +199,14 @@ void Level::UnloadLevel()
 			delete m_LevelWallTiles[w];
 		}
 	}
-	/*
-	for (int i = 0; i < m_InteractableTiles.size(); i++)
-	{
-		if (m_InteractableTiles[i])
-		{
-			delete m_InteractableTiles[i];
-		}
-	}
 
-	for (int c = 0; c < m_LevelWallColliders.size(); c++)
-	{
-		if (m_LevelWallColliders[c])
-		{
-			delete m_LevelWallColliders[c];
-		}
-	}
-	*/
+	//Clears he arrays
 	m_LevelTiles.clear();
 	m_LevelWallTiles.clear();
 	m_InteractableTiles.clear();
 	m_LevelWallColliders.clear();
 
+	//Replaces level array with '0'
 	for (int y = 0; y < m_LevelHeight; y++)
 	{
 		for (int x = 0; x < m_LevelWidth; x++)

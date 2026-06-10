@@ -1,9 +1,8 @@
 ﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(548,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFMLSetup.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  main.cpp
+  Character.cpp
 C:\Users\MDS3001200\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\Collisions.h(4,14): warning C4091: 'static ': ignored on left of 'Collisions' when no variable is declared
-  (compiling source file 'main.cpp')
+  (compiling source file 'Character.cpp')
   
-C:\Users\MDS3001200\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(235,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\MDS3001200\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(289,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\MDS3001200\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(294,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MDS3001200\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\Character.cpp(56,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MDS3001200\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\Character.cpp(87,20): warning C4018: '<': signed/unsigned mismatch
   SFMLSetup.vcxproj -> C:\Users\MDS3001200\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\Debug\2D Platformer.exe

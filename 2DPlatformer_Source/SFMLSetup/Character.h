@@ -48,7 +48,7 @@ public:
 	~Character();
 
 	void CharacterUpdate(float _dt, std::vector<Tile*> _Collisions);
-	void CharacterInputUpdate(float _dt, std::vector<Tile*> _Collisions, bool _DoorKey);
+	void CharacterInputUpdate(float _dt, std::vector<Tile*> _Collisions, sf::Vector2f _Mouse);
 	void CharacterGravUpdate(float _dt);
 	void PlayerAnimate();
 	void EnemyAnimate();
