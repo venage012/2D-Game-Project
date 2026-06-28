@@ -1,0 +1,16 @@
+﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(551,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (SFMLSetup.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\Collisions.h(4,14): warning C4091: 'static ': ignored on left of 'Collisions' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(21,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(221,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(264,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(277,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(282,27): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  1 of 432 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SFMLSetup.vcxproj -> C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\Release\2D Platformer.exe

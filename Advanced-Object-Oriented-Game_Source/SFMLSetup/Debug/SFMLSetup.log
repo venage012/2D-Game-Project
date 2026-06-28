@@ -1,0 +1,11 @@
+﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(551,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFMLSetup.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\Collisions.h(4,14): warning C4091: 'static ': ignored on left of 'Collisions' when no variable is declared
+  (compiling source file 'main.cpp')
+  
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(19,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(213,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(256,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(269,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\SFMLSetup\main.cpp(274,27): warning C4018: '<': signed/unsigned mismatch
+  SFMLSetup.vcxproj -> C:\Users\venag\OneDrive\Documents\GitHub\2D-Game-Project\2DPlatformer_Source\Debug\2D Platformer.exe
